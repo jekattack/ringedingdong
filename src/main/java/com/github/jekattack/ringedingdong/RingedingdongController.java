@@ -8,13 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/devQuiz")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class RingedingdongController {
 
     @GetMapping("/{name}")
-    public String greeting(@PathVariable String name){
-        return "Ringedingdong, " + name;
+    public String greetingName(@PathVariable String name){
+        return "Ringedingdong, " + name + "!";
     }
 
+    @GetMapping()
+    public String greeting(){
+        return "Regedingdong!";
+    }
 }
